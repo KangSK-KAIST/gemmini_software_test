@@ -12,7 +12,7 @@
 #include <limits.h>
 #include <stdbool.h>
 
-#include "include/gemmini_params.h"
+#include "gemmini_params.h"
 
 #define GEMMINI_ASSERTIONS
 
@@ -28,7 +28,7 @@
 #endif
 
 // Accelerator interface
-#include "rocc-software/src/xcustom.h"
+#include "xcustom.h"
 
 #define k_CONFIG 0
 #define k_MVIN 2

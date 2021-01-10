@@ -12,8 +12,8 @@
 #include <limits.h>
 #include <stdbool.h>
 
-#include "include/gemmini_params.h"
-#include "include/gemmini.h"
+#include "gemmini_params.h"
+#include "gemmini.h"
 
 #ifdef BAREMETAL
 #undef assert
@@ -164,13 +164,7 @@ int is_equal(elem_t x[DIM][DIM], elem_t y[DIM][DIM]) {
       result;})
 
 uint64_t read_cycles() {
-    uint64_t cycles;
-    asm volatile ("rdcycle %0" : "=r" (cycles));
-    return cycles;
-
-    // const uint32_t * mtime = (uint32_t *)(33554432 + 0xbff8);
-    // const uint32_t * mtime = (uint32_t *)(33554432 + 0xbffc);
-    // return *mtime;
+    return 0;
 }
 
 #undef abs

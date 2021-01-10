@@ -8,7 +8,7 @@
 #ifndef BAREMETAL
 #include <sys/mman.h>
 #endif
-#include "include/gemmini_testutils.h"
+#include "gemmini_testutils.h"
 
 int main() {
 #ifndef BAREMETAL

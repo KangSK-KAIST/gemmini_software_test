@@ -3,7 +3,7 @@
 #ifndef SRC_MAIN_C_TRANSLATOR_H
 #define SRC_MAIN_C_TRANSLATOR_H
 
-#include "rocc-software/src/xcustom.h"
+#include "xcustom.h"
 
 #define XCUSTOM_TRANS 1
 
