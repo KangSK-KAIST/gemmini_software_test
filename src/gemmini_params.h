@@ -39,4 +39,6 @@ typedef uint32_t scale_acc_t_bits;
 
 #define MVIN_SCALE_ONE 1
 
+#define BAREMETAL
+
 #endif // GEMMINI_PARAMS_H
