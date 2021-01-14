@@ -1,4 +1,9 @@
-tests = \
+CC:=gcc
+CFLAGS:= -std=gnu99 -O2
+IN_CPP_DIR:=src
+OUT_O_DIR:=build
+
+# tests = \
 	mvin_mvout \
 	mvin_mvout_stride \
 	mvin_mvout_acc \
@@ -18,15 +23,15 @@ tests = \
 	tiled_matmul_option \
 	template
 
-CFLAGS := $(CFLAGS) \
-	-DPREALLOCATE=1 \
-	-DMULTITHREAD=1 \
-	-std=gnu99 \
-	-O2 \
+tests = matmul
 
-tests_linux = $(tests:=-linux-native)
+builds=$(addprefix $(OUT_O_DIR)/,$(tests))
 
-all: $(tests_linux)
+all: $(builds)
 
-%-linux-native: %.c
-	gcc $(CFLAGS) $< $(LFLAGS) -o $@
+$(OUT_O_DIR)/%: $(IN_CPP_DIR)/%.c
+	mkdir -p $(OUT_O_DIR)
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	rm -rf $(OUT_O_DIR)
